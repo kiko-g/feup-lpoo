@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ArenaView</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g28.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ArenaView (com.g28.view)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ArenaView</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g28.view;
+<i>2</i>&nbsp;import com.g28.model.*;
+<i>3</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;
+<b class="nc"><i>6</i>&nbsp;public class ArenaView {</b>
+<i>7</i>&nbsp;
+<b class="nc"><i>8</i>&nbsp;    private PlayerView playerView = new PlayerView();</b>
+<b class="nc"><i>9</i>&nbsp;    private GhostView ghostView = new GhostView();</b>
+<b class="nc"><i>10</i>&nbsp;    private PacDotView pacDotView = new PacDotView();</b>
+<b class="nc"><i>11</i>&nbsp;    private PowerUpView powerUpView = new PowerUpView();</b>
+<b class="nc"><i>12</i>&nbsp;    private PortalView portalView = new PortalView();</b>
+<b class="nc"><i>13</i>&nbsp;    private WallView wallView = new WallView();</b>
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public void drawArena(TextGraphics graphics, Arena arena) {
+<b class="nc"><i>16</i>&nbsp;        List&lt;Element&gt; elements = arena.getAllElements();</b>
+<i>17</i>&nbsp;
+<b class="nc"><i>18</i>&nbsp;        for(Element element : elements) {</b>
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;            if(element.getClass().equals(Player.class)) {</b>
+<b class="nc"><i>21</i>&nbsp;                playerView.draw(graphics, (Player) element);</b>
+<i>22</i>&nbsp;            }
+<i>23</i>&nbsp;
+<b class="nc"><i>24</i>&nbsp;            if(element.getClass().equals(Ghost.class)) {</b>
+<b class="nc"><i>25</i>&nbsp;                ghostView.draw(graphics, (Ghost) element);</b>
+<i>26</i>&nbsp;            }
+<i>27</i>&nbsp;
+<b class="nc"><i>28</i>&nbsp;            if(element.getClass().equals(PacDot.class)) {</b>
+<b class="nc"><i>29</i>&nbsp;                pacDotView.draw(graphics, (PacDot) element);</b>
+<i>30</i>&nbsp;            }
+<i>31</i>&nbsp;
+<b class="nc"><i>32</i>&nbsp;            if(element.getClass().equals(PowerUp.class)) {</b>
+<b class="nc"><i>33</i>&nbsp;                powerUpView.draw(graphics, (PowerUp) element);</b>
+<i>34</i>&nbsp;            }
+<i>35</i>&nbsp;
+<b class="nc"><i>36</i>&nbsp;            if(element.getClass().equals(Portal.class)) {</b>
+<b class="nc"><i>37</i>&nbsp;                portalView.draw(graphics, (Portal) element);</b>
+<i>38</i>&nbsp;            }
+<i>39</i>&nbsp;
+<b class="nc"><i>40</i>&nbsp;            if(element.getClass().equals(Wall.class)) {</b>
+<b class="nc"><i>41</i>&nbsp;                wallView.draw(graphics, (Wall) element);</b>
+<i>42</i>&nbsp;            }
+<b class="nc"><i>43</i>&nbsp;        }</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 23:57</div>
+</div>
+</body>
+</html>

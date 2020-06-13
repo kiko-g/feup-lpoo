@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Player</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g28.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Player (com.g28.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Player</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/ 17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (25/ 25)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$0AM8cy2W</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$0IlGfrej</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$2KDweOYi</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$4pIJZoHH</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$BEzpPlEY</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$fhea9AWf</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$GbkTpJlf</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$MeJmSgBY</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$Mrx3bIxf</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$njR52iJE</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$nkaOsVXW</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$o9j8ByIx</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$qMns7rlZ</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$STULfwZZ</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$sZcBkRp2</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$udb5DtZT</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$V8w2ailr</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$vhAIu7zO</td>
+  </tr>
+  <tr>
+    <td class="name">Player$MockitoMock$2102734967$auxiliary$ZzwtMtFO</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (17/ 17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (25/ 25)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g28.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;public class Player extends Element {
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;    public Player() {
+<b class="fc"><i>6</i>&nbsp;         this(12, 25);</b>
+<b class="fc"><i>7</i>&nbsp;    }</b>
+<i>8</i>&nbsp;    public Player(int x, int y) {
+<b class="fc"><i>9</i>&nbsp;        super(x, y);</b>
+<b class="fc"><i>10</i>&nbsp;        this.poweredUp = false;</b>
+<b class="fc"><i>11</i>&nbsp;    }</b>
+<b class="fc"><i>12</i>&nbsp;    private int velocityX = 1, velocityY = 1, hearts = 4, score = 0;</b>
+<i>13</i>&nbsp;    private boolean poweredUp;
+<i>14</i>&nbsp;
+<b class="fc"><i>15</i>&nbsp;    public int getScore() { return score; }</b>
+<b class="fc"><i>16</i>&nbsp;    public int getVelocityX() { return velocityX; }</b>
+<b class="fc"><i>17</i>&nbsp;    public int getVelocityY() { return velocityY; }</b>
+<i>18</i>&nbsp;    public boolean getPoweredUp() {
+<b class="fc"><i>19</i>&nbsp;        return poweredUp;</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;    public int getHearts() {
+<b class="fc"><i>22</i>&nbsp;        return hearts;</b>
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;
+<b class="fc"><i>25</i>&nbsp;    public void setScore(int score) { this.score = score; }</b>
+<b class="fc"><i>26</i>&nbsp;    public void setVelocityX(int velocityX) { this.velocityX = velocityX; }</b>
+<b class="fc"><i>27</i>&nbsp;    public void setVelocityY(int velocityY) { this.velocityY = velocityY; }</b>
+<i>28</i>&nbsp;    public void setPoweredUp(boolean state) {
+<b class="fc"><i>29</i>&nbsp;        this.poweredUp = state;</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public void incrementScore(int increment) {
+<b class="fc"><i>33</i>&nbsp;        score += increment;</b>
+<b class="fc"><i>34</i>&nbsp;    }</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public boolean decreaseHearts() {
+<b class="fc"><i>37</i>&nbsp;        if (!getPoweredUp())</b>
+<b class="fc"><i>38</i>&nbsp;            hearts--;</b>
+<b class="fc"><i>39</i>&nbsp;        return hearts != 0;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    public Position moveUp() {
+<b class="fc"><i>44</i>&nbsp;        return new Position(getPosition().getX(), getPosition().getY() - velocityY);</b>
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;    public Position moveDown() {
+<b class="fc"><i>47</i>&nbsp;        return new Position(getPosition().getX(), getPosition().getY() + velocityY);</b>
+<i>48</i>&nbsp;    }
+<i>49</i>&nbsp;    public Position moveLeft() {
+<b class="fc"><i>50</i>&nbsp;        return new Position(getPosition().getX() - velocityX, getPosition().getY());</b>
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;    public Position moveRight() {
+<b class="fc"><i>53</i>&nbsp;        return new Position(getPosition().getX() + velocityX, getPosition().getY());</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 23:57</div>
+</div>
+</body>
+</html>

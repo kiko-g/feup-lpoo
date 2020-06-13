@@ -1,0 +1,491 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Arena</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g28.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Arena (com.g28.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Arena</td>
+<td class="coverageStat">
+  <span class="percent">
+    15.8%
+  </span>
+  <span class="absValue">
+    (3/ 19)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (50/ 150)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Arena$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    8.3%
+  </span>
+  <span class="absValue">
+    (1/ 12)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Arena$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (1/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (1/ 3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Arena$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Arena$LevelType</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">Arena$MovementType</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    26.9%
+  </span>
+  <span class="absValue">
+    (7/ 26)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    32%
+  </span>
+  <span class="absValue">
+    (54/ 169)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g28.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.g28.view.*;
+<i>4</i>&nbsp;import com.googlecode.lanterna.input.KeyStroke;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.io.File;
+<i>7</i>&nbsp;import java.io.FileNotFoundException;
+<i>8</i>&nbsp;import java.io.FileWriter;
+<i>9</i>&nbsp;import java.io.IOException;
+<i>10</i>&nbsp;import java.util.*;
+<i>11</i>&nbsp;import java.util.concurrent.CopyOnWriteArrayList;
+<i>12</i>&nbsp;
+<b class="nc"><i>13</i>&nbsp;public class Arena extends State {</b>
+<b class="fc"><i>14</i>&nbsp;    public enum LevelType { TINY, MAZE, OPEN }</b>
+<b class="fc"><i>15</i>&nbsp;    public enum MovementType { NONE, UP, DOWN, LEFT, RIGHT }</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    private Player player;
+<i>18</i>&nbsp;    private List&lt;Wall&gt; walls;
+<i>19</i>&nbsp;    private List&lt;Ghost&gt; ghosts;
+<i>20</i>&nbsp;    private List&lt;Portal&gt; portals;
+<i>21</i>&nbsp;    private List&lt;PacDot&gt; pacdots;
+<i>22</i>&nbsp;    private List&lt;PowerUp&gt; powerups;
+<i>23</i>&nbsp;
+<b class="fc"><i>24</i>&nbsp;    private WallView wallView = new WallView();</b>
+<b class="fc"><i>25</i>&nbsp;    private GhostView ghostView = new GhostView();</b>
+<b class="fc"><i>26</i>&nbsp;    private PlayerView playerView = new PlayerView();</b>
+<b class="fc"><i>27</i>&nbsp;    private PacDotView pacDotView = new PacDotView();</b>
+<b class="fc"><i>28</i>&nbsp;    private PowerUpView powerUpView = new PowerUpView();</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    private Timer timer;
+<i>31</i>&nbsp;    private TimerTask task, taskSpawn;
+<i>32</i>&nbsp;    private Position spawnPoint;
+<b class="fc"><i>33</i>&nbsp;    private int spawnCounter = 0;</b>
+<i>34</i>&nbsp;    private LevelType level;
+<b class="fc"><i>35</i>&nbsp;    private MovementType move = MovementType.NONE;</b>
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    public Arena(int width, int height) {
+<b class="fc"><i>38</i>&nbsp;        super(width, height);</b>
+<b class="fc"><i>39</i>&nbsp;        this.player = new Player();</b>
+<b class="fc"><i>40</i>&nbsp;        this.walls = new CopyOnWriteArrayList&lt;&gt;();</b>
+<b class="fc"><i>41</i>&nbsp;        this.ghosts = new CopyOnWriteArrayList&lt;&gt;();</b>
+<b class="fc"><i>42</i>&nbsp;        this.pacdots = new CopyOnWriteArrayList&lt;&gt;();</b>
+<b class="fc"><i>43</i>&nbsp;        this.portals = new CopyOnWriteArrayList&lt;&gt;();</b>
+<b class="fc"><i>44</i>&nbsp;        this.powerups = new CopyOnWriteArrayList&lt;&gt;();</b>
+<b class="fc"><i>45</i>&nbsp;        this.level = LevelType.MAZE;</b>
+<b class="fc"><i>46</i>&nbsp;        this.createMap();</b>
+<i>47</i>&nbsp;
+<b class="fc"><i>48</i>&nbsp;        this.timer = new Timer();</b>
+<b class="fc"><i>49</i>&nbsp;        this.task = new TimerTask() {</b>
+<i>50</i>&nbsp;            @Override
+<i>51</i>&nbsp;            public void run()
+<i>52</i>&nbsp;            {
+<b class="nc"><i>53</i>&nbsp;                switch(move) {</b>
+<i>54</i>&nbsp;                    case UP:
+<b class="nc"><i>55</i>&nbsp;                        movePacman(player.moveUp());</b>
+<b class="nc"><i>56</i>&nbsp;                        break;</b>
+<i>57</i>&nbsp;                    case DOWN:
+<b class="nc"><i>58</i>&nbsp;                        movePacman(player.moveDown());</b>
+<b class="nc"><i>59</i>&nbsp;                        break;</b>
+<i>60</i>&nbsp;                    case LEFT:
+<b class="nc"><i>61</i>&nbsp;                        movePacman(player.moveLeft());</b>
+<b class="nc"><i>62</i>&nbsp;                        break;</b>
+<i>63</i>&nbsp;                    case RIGHT:
+<b class="nc"><i>64</i>&nbsp;                        movePacman(player.moveRight());</b>
+<b class="nc"><i>65</i>&nbsp;                        break;</b>
+<i>66</i>&nbsp;                    case NONE:
+<b class="nc"><i>67</i>&nbsp;                        movePacman(null);</b>
+<i>68</i>&nbsp;                }
+<b class="nc"><i>69</i>&nbsp;            }</b>
+<i>70</i>&nbsp;        };
+<i>71</i>&nbsp;
+<b class="fc"><i>72</i>&nbsp;        this.taskSpawn = new TimerTask() {</b>
+<i>73</i>&nbsp;            @Override
+<i>74</i>&nbsp;            public void run() {
+<b class="nc"><i>75</i>&nbsp;                spawnOneGhost();</b>
+<b class="nc"><i>76</i>&nbsp;            }</b>
+<i>77</i>&nbsp;        };
+<b class="fc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    public void start() {
+<b class="nc"><i>81</i>&nbsp;        timer.scheduleAtFixedRate(task, new Date(), 200);</b>
+<b class="nc"><i>82</i>&nbsp;        timer.scheduleAtFixedRate(taskSpawn, new Date(), 5000);</b>
+<b class="nc"><i>83</i>&nbsp;    }</b>
+<i>84</i>&nbsp;
+<i>85</i>&nbsp;    private void spawnOneGhost() {
+<b class="nc"><i>86</i>&nbsp;        ghosts.get(spawnCounter).setPosition(spawnPoint);</b>
+<b class="nc"><i>87</i>&nbsp;        spawnCounter++;</b>
+<b class="nc"><i>88</i>&nbsp;        if (spawnCounter &gt;= ghosts.size())</b>
+<b class="nc"><i>89</i>&nbsp;            taskSpawn.cancel();</b>
+<b class="nc"><i>90</i>&nbsp;    }</b>
+<i>91</i>&nbsp;
+<i>92</i>&nbsp;    public void nextLevel() {
+<b class="nc"><i>93</i>&nbsp;        if(level.equals(LevelType.MAZE)) level = LevelType.OPEN;</b>
+<b class="nc"><i>94</i>&nbsp;        else if(level.equals(LevelType.OPEN)) level = LevelType.TINY;</b>
+<i>95</i>&nbsp;
+<b class="nc"><i>96</i>&nbsp;        walls.clear();</b>
+<b class="nc"><i>97</i>&nbsp;        ghosts.clear();</b>
+<b class="nc"><i>98</i>&nbsp;        portals.clear();</b>
+<b class="nc"><i>99</i>&nbsp;        powerups.clear();</b>
+<i>100</i>&nbsp;
+<b class="nc"><i>101</i>&nbsp;        this.createMap();</b>
+<b class="nc"><i>102</i>&nbsp;    }</b>
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;    private void createMap() {
+<b class="fc"><i>105</i>&nbsp;        int i = 0;</b>
+<i>106</i>&nbsp;        String line;
+<i>107</i>&nbsp;
+<i>108</i>&nbsp;        try {
+<b class="fc"><i>109</i>&nbsp;            Scanner scanner = new Scanner(new File(&quot;src/main/resources/&quot;+level.toString().toLowerCase()+&quot;.txt&quot;));</b>
+<b class="fc"><i>110</i>&nbsp;            while(scanner.hasNextLine())</b>
+<i>111</i>&nbsp;            {
+<b class="fc"><i>112</i>&nbsp;                line = scanner.nextLine();</b>
+<b class="fc"><i>113</i>&nbsp;                for(int j = 0; j &lt; line.length(); j++)</b>
+<i>114</i>&nbsp;                {
+<b class="fc"><i>115</i>&nbsp;                    switch(line.charAt(j))</b>
+<i>116</i>&nbsp;                    {
+<i>117</i>&nbsp;                        case &#39;#&#39;: //wall
+<b class="fc"><i>118</i>&nbsp;                            walls.add(new Wall(j, i));</b>
+<b class="fc"><i>119</i>&nbsp;                            break;</b>
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;                        case &#39;0&#39;: //ghost
+<b class="fc"><i>122</i>&nbsp;                            switch(ghosts.size()) {</b>
+<i>123</i>&nbsp;                                case 0:
+<b class="fc"><i>124</i>&nbsp;                                    ghosts.add(new Ghost(j, i, &quot;#d5212e&quot;, new ChaseAgressive(), new FrightenedWandering()));</b>
+<b class="fc"><i>125</i>&nbsp;                                    spawnPoint = new Position(j, i);</b>
+<b class="fc"><i>126</i>&nbsp;                                    break;</b>
+<i>127</i>&nbsp;                                case 1:
+<b class="fc"><i>128</i>&nbsp;                                    ghosts.add(new Ghost(j, i, &quot;#99ccff&quot;, new ChaseSentinel(), new FrightenedWandering()));</b>
+<b class="fc"><i>129</i>&nbsp;                                    break;</b>
+<i>130</i>&nbsp;                                case 2:
+<b class="fc"><i>131</i>&nbsp;                                    ghosts.add(new Ghost(j, i, &quot;#ffc0cb&quot;, new ChaseRandom(), new FrightenedWandering()));</b>
+<b class="fc"><i>132</i>&nbsp;                                    break;</b>
+<i>133</i>&nbsp;                                default:
+<b class="fc"><i>134</i>&nbsp;                                    ghosts.add(new Ghost(j, i, &quot;#ffe338&quot;, new ChasePredict(), new FrightenedWandering()));</b>
+<b class="fc"><i>135</i>&nbsp;                                    break;</b>
+<i>136</i>&nbsp;                            }
+<i>137</i>&nbsp;                            break;
+<i>138</i>&nbsp;                        case &#39;=&#39;: //portal
+<b class="fc"><i>139</i>&nbsp;                            portals.add(new Portal(j, i));</b>
+<b class="fc"><i>140</i>&nbsp;                            break;</b>
+<i>141</i>&nbsp;                        case &#39;X&#39;: //pacman himself
+<b class="fc"><i>142</i>&nbsp;                            player.setPosition(new Position(j, i));</b>
+<b class="fc"><i>143</i>&nbsp;                            break;</b>
+<i>144</i>&nbsp;                        case &#39;o&#39;: //powerup
+<b class="fc"><i>145</i>&nbsp;                            powerups.add(new PowerUp(j, i));</b>
+<b class="fc"><i>146</i>&nbsp;                            break;</b>
+<i>147</i>&nbsp;                        default: //pacdot
+<b class="fc"><i>148</i>&nbsp;                            pacdots.add(new PacDot(j, i));</b>
+<i>149</i>&nbsp;                            break;
+<i>150</i>&nbsp;                    }
+<i>151</i>&nbsp;                }
+<b class="fc"><i>152</i>&nbsp;                i++;</b>
+<i>153</i>&nbsp;            }
+<b class="fc"><i>154</i>&nbsp;            scanner.close();</b>
+<i>155</i>&nbsp;        }
+<b class="nc"><i>156</i>&nbsp;        catch (FileNotFoundException e) {</b>
+<b class="nc"><i>157</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i>158</i>&nbsp;        }</b>
+<b class="fc"><i>159</i>&nbsp;    }</b>
+<i>160</i>&nbsp;
+<i>161</i>&nbsp;    public LevelType getLevel() {
+<b class="fc"><i>162</i>&nbsp;        return level;</b>
+<i>163</i>&nbsp;    }
+<i>164</i>&nbsp;
+<i>165</i>&nbsp;    public List&lt;PacDot&gt; getPacdots() {
+<b class="nc"><i>166</i>&nbsp;        return pacdots;</b>
+<i>167</i>&nbsp;    }
+<i>168</i>&nbsp;
+<i>169</i>&nbsp;    public List&lt;Element&gt; getAllElements() {
+<b class="nc"><i>170</i>&nbsp;        List&lt;Element&gt; elements = new ArrayList&lt;&gt;();</b>
+<i>171</i>&nbsp;
+<b class="nc"><i>172</i>&nbsp;        elements.addAll(walls);</b>
+<b class="nc"><i>173</i>&nbsp;        elements.addAll(portals);</b>
+<b class="nc"><i>174</i>&nbsp;        elements.addAll(pacdots);</b>
+<b class="nc"><i>175</i>&nbsp;        elements.addAll(powerups);</b>
+<b class="nc"><i>176</i>&nbsp;        elements.addAll(ghosts);</b>
+<b class="nc"><i>177</i>&nbsp;        elements.add(player);</b>
+<i>178</i>&nbsp;
+<b class="nc"><i>179</i>&nbsp;        return elements;</b>
+<i>180</i>&nbsp;    }
+<i>181</i>&nbsp;
+<i>182</i>&nbsp;    private Element getCollidingElement(Position position, List&lt;? extends Element&gt; elements) {
+<b class="nc"><i>183</i>&nbsp;        for (Element element : elements)</b>
+<b class="nc"><i>184</i>&nbsp;            if (element.getPosition().equals(position))</b>
+<b class="nc"><i>185</i>&nbsp;                return element;</b>
+<i>186</i>&nbsp;
+<b class="nc"><i>187</i>&nbsp;        return null;</b>
+<i>188</i>&nbsp;    }
+<i>189</i>&nbsp;
+<i>190</i>&nbsp;    private void movePacman(Position position) {
+<b class="nc"><i>191</i>&nbsp;        moveGhosts();</b>
+<b class="nc"><i>192</i>&nbsp;        checkCell(player.getPosition());</b>
+<i>193</i>&nbsp;
+<b class="nc"><i>194</i>&nbsp;        if (position == null)</b>
+<b class="nc"><i>195</i>&nbsp;            return;</b>
+<i>196</i>&nbsp;
+<b class="nc"><i>197</i>&nbsp;        if(canMove(position)) {</b>
+<b class="nc"><i>198</i>&nbsp;            player.setPosition(position);</b>
+<b class="nc"><i>199</i>&nbsp;            checkCell(position);</b>
+<i>200</i>&nbsp;        }
+<b class="nc"><i>201</i>&nbsp;    }</b>
+<i>202</i>&nbsp;
+<i>203</i>&nbsp;    private void moveGhosts() {
+<b class="nc"><i>204</i>&nbsp;        List&lt;Element&gt; elements = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>205</i>&nbsp;        elements.addAll(walls);</b>
+<b class="nc"><i>206</i>&nbsp;        elements.addAll(ghosts);</b>
+<b class="nc"><i>207</i>&nbsp;        elements.addAll(portals);</b>
+<i>208</i>&nbsp;
+<b class="nc"><i>209</i>&nbsp;        for (int i = 0; i &lt; spawnCounter; i++) {</b>
+<b class="nc"><i>210</i>&nbsp;            if(player.getPoweredUp()) ghosts.get(i).enterFrightenedMode(player, elements);</b>
+<b class="nc"><i>211</i>&nbsp;            else ghosts.get(i).enterChaseMode(player, elements);</b>
+<i>212</i>&nbsp;        }
+<b class="nc"><i>213</i>&nbsp;    }</b>
+<i>214</i>&nbsp;
+<i>215</i>&nbsp;    private boolean canMove(Position pos) {
+<b class="nc"><i>216</i>&nbsp;        if (pos.getX() &lt; 0 || pos.getX() &gt;= width || pos.getY() &lt; 0 || pos.getY() &gt;= height)</b>
+<b class="nc"><i>217</i>&nbsp;            return false;</b>
+<i>218</i>&nbsp;
+<b class="nc"><i>219</i>&nbsp;        for (Wall wall : walls)</b>
+<b class="nc"><i>220</i>&nbsp;            if (wall.getPosition().equals(pos)) return false;</b>
+<i>221</i>&nbsp;
+<b class="nc"><i>222</i>&nbsp;        return true;</b>
+<i>223</i>&nbsp;    }
+<i>224</i>&nbsp;
+<i>225</i>&nbsp;    private void checkCell(Position position) {
+<b class="nc"><i>226</i>&nbsp;        Ghost ghost = (Ghost) getCollidingElement(position, ghosts);</b>
+<b class="nc"><i>227</i>&nbsp;        PacDot pacdot = (PacDot) getCollidingElement(position, pacdots);</b>
+<b class="nc"><i>228</i>&nbsp;        Portal portal = (Portal) getCollidingElement(position, portals);</b>
+<b class="nc"><i>229</i>&nbsp;        PowerUp powerup = (PowerUp) getCollidingElement(position, powerups);</b>
+<i>230</i>&nbsp;
+<b class="nc"><i>231</i>&nbsp;        if(pacdot != null) {</b>
+<b class="nc"><i>232</i>&nbsp;            pacdots.remove(pacdot);</b>
+<b class="nc"><i>233</i>&nbsp;            player.incrementScore(10);</b>
+<i>234</i>&nbsp;        }
+<b class="nc"><i>235</i>&nbsp;        if(powerup != null) {</b>
+<b class="nc"><i>236</i>&nbsp;            player.incrementScore(50);</b>
+<b class="nc"><i>237</i>&nbsp;            powerups.remove(powerup);</b>
+<b class="nc"><i>238</i>&nbsp;            powerup.activate(player, powerups);</b>
+<i>239</i>&nbsp;        }
+<b class="nc"><i>240</i>&nbsp;        if(portal != null) {</b>
+<b class="nc"><i>241</i>&nbsp;            portal.warp(player, level);</b>
+<i>242</i>&nbsp;        }
+<b class="nc"><i>243</i>&nbsp;        if(ghost != null) {</b>
+<b class="nc"><i>244</i>&nbsp;            if (!player.decreaseHearts()) this.close();</b>
+<b class="nc"><i>245</i>&nbsp;            if (player.getPoweredUp()) ghost.returnToInitialPosition();</b>
+<i>246</i>&nbsp;            else {
+<b class="nc"><i>247</i>&nbsp;                for(Ghost g : ghosts)</b>
+<b class="nc"><i>248</i>&nbsp;                    g.returnToInitialPosition();</b>
+<i>249</i>&nbsp;            }
+<i>250</i>&nbsp;        }
+<b class="nc"><i>251</i>&nbsp;    }</b>
+<i>252</i>&nbsp;
+<i>253</i>&nbsp;    public void close() {
+<b class="nc"><i>254</i>&nbsp;        timer.cancel();</b>
+<b class="nc"><i>255</i>&nbsp;        timer.purge();</b>
+<b class="nc"><i>256</i>&nbsp;        end = true;</b>
+<b class="nc"><i>257</i>&nbsp;        saveScore();</b>
+<b class="nc"><i>258</i>&nbsp;    }</b>
+<i>259</i>&nbsp;
+<i>260</i>&nbsp;    public boolean checkEnd() {
+<b class="nc"><i>261</i>&nbsp;        return end;</b>
+<i>262</i>&nbsp;    }
+<i>263</i>&nbsp;
+<i>264</i>&nbsp;    public void processKey(KeyStroke key) {
+<b class="nc"><i>265</i>&nbsp;        switch (key.getKeyType()) {</b>
+<i>266</i>&nbsp;            case Escape:
+<b class="nc"><i>267</i>&nbsp;                this.close();</b>
+<b class="nc"><i>268</i>&nbsp;                break;</b>
+<i>269</i>&nbsp;
+<i>270</i>&nbsp;            case ArrowUp:
+<b class="nc"><i>271</i>&nbsp;                move = MovementType.UP;</b>
+<b class="nc"><i>272</i>&nbsp;                break;</b>
+<i>273</i>&nbsp;
+<i>274</i>&nbsp;            case ArrowDown:
+<b class="nc"><i>275</i>&nbsp;                move = MovementType.DOWN;</b>
+<b class="nc"><i>276</i>&nbsp;                break;</b>
+<i>277</i>&nbsp;
+<i>278</i>&nbsp;            case ArrowLeft:
+<b class="nc"><i>279</i>&nbsp;                move = MovementType.LEFT;</b>
+<b class="nc"><i>280</i>&nbsp;                break;</b>
+<i>281</i>&nbsp;
+<i>282</i>&nbsp;            case ArrowRight:
+<b class="nc"><i>283</i>&nbsp;                move = MovementType.RIGHT;</b>
+<b class="nc"><i>284</i>&nbsp;                break;</b>
+<i>285</i>&nbsp;
+<i>286</i>&nbsp;            default:
+<i>287</i>&nbsp;                break;
+<i>288</i>&nbsp;        }
+<b class="nc"><i>289</i>&nbsp;    }</b>
+<i>290</i>&nbsp;
+<i>291</i>&nbsp;    public int getPlayerScore() {
+<b class="nc"><i>292</i>&nbsp;        return player.getScore();</b>
+<i>293</i>&nbsp;    }
+<i>294</i>&nbsp;
+<i>295</i>&nbsp;    public void saveScore() {
+<i>296</i>&nbsp;        try {
+<b class="nc"><i>297</i>&nbsp;            File highscoresFile = new File(&quot;src/main/resources/highscore.txt&quot;);</b>
+<b class="nc"><i>298</i>&nbsp;            highscoresFile.createNewFile();</b>
+<b class="nc"><i>299</i>&nbsp;            FileWriter myWriter = new FileWriter(highscoresFile, true);</b>
+<b class="nc"><i>300</i>&nbsp;            myWriter.write(player.getScore() + &quot;\n&quot;);</b>
+<b class="nc"><i>301</i>&nbsp;            myWriter.close();</b>
+<b class="nc"><i>302</i>&nbsp;        } catch (IOException e) {</b>
+<b class="nc"><i>303</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i>304</i>&nbsp;        }</b>
+<b class="nc"><i>305</i>&nbsp;    }</b>
+<i>306</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 23:57</div>
+</div>
+</body>
+</html>

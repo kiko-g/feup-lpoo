@@ -1,0 +1,11 @@
+*.iml
+out/
+build/
+bin/
+.settings/
+.idea/
+.gradle/
+.settings/
+*.project
+*.classpath
+*.mp4

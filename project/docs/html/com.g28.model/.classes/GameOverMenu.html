@@ -1,0 +1,161 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GameOverMenu</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g28.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GameOverMenu (com.g28.model)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameOverMenu</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 15)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">GameOverMenu$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 16)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g28.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.googlecode.lanterna.SGR;
+<i>4</i>&nbsp;import com.googlecode.lanterna.TextColor;
+<i>5</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+<i>6</i>&nbsp;import com.googlecode.lanterna.input.KeyStroke;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;public class GameOverMenu extends State {
+<i>9</i>&nbsp;    int score;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    public GameOverMenu(int width, int height) {
+<b class="nc"><i>12</i>&nbsp;        super(width, height);</b>
+<b class="nc"><i>13</i>&nbsp;        this.score = 0;</b>
+<i>14</i>&nbsp;    }
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;    public void setScore(int score) {
+<b class="nc"><i>17</i>&nbsp;        this.score = score;</b>
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    public void draw(TextGraphics graphics) {
+<b class="nc"><i>21</i>&nbsp;        graphics.setBackgroundColor(TextColor.Factory.fromString(&quot;#000000&quot;));</b>
+<b class="nc"><i>22</i>&nbsp;        graphics.setForegroundColor(TextColor.Factory.fromString(&quot;#FFFF00&quot;));</b>
+<b class="nc"><i>23</i>&nbsp;        graphics.enableModifiers(SGR.BOLD);</b>
+<i>24</i>&nbsp;
+<b class="nc"><i>25</i>&nbsp;        String title = &quot;Game Over!&quot;;</b>
+<b class="nc"><i>26</i>&nbsp;        String scoreString = &quot;Score: &quot; + score;</b>
+<i>27</i>&nbsp;
+<b class="nc"><i>28</i>&nbsp;        graphics.putString(width/2 - title.length() / 2, height/2 - 2, title);</b>
+<b class="nc"><i>29</i>&nbsp;        graphics.putString(width/2 - scoreString.length() / 2, height/2, scoreString);</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    @Override
+<i>33</i>&nbsp;    public void close() {
+<b class="nc"><i>34</i>&nbsp;        this.end = true;</b>
+<i>35</i>&nbsp;    }
+<i>36</i>&nbsp;
+<i>37</i>&nbsp;    @Override
+<i>38</i>&nbsp;    public boolean checkEnd() {
+<b class="nc"><i>39</i>&nbsp;        return end;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    @Override
+<i>43</i>&nbsp;    public void processKey(KeyStroke key) {
+<b class="nc"><i>44</i>&nbsp;        switch (key.getKeyType()) {</b>
+<i>45</i>&nbsp;            case Escape:
+<b class="nc"><i>46</i>&nbsp;                this.close();</b>
+<b class="nc"><i>47</i>&nbsp;                break;</b>
+<i>48</i>&nbsp;
+<i>49</i>&nbsp;            default: break;
+<i>50</i>&nbsp;        }
+<i>51</i>&nbsp;    }
+<i>52</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 23:57</div>
+</div>
+</body>
+</html>

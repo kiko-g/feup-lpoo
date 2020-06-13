@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9b435420-c662-432d-9308-eb90bd7ac2cd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>art</find>
+      <find>United Kingdom</find>
+      <find>ticker</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>UK</replace>
+    </replaceStrings>
+  </component>
+  <component name="ProjectId" id="1d0yIhXWK3D0nDBVycD8x1tzdlV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553520726322" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../juet2019" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestCases">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quiz" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases.testEventPrintOut" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quiz" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="METHOD_NAME" value="testEventPrintOut" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases.testInvalidTicket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quiz" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="METHOD_NAME" value="testInvalidTicket" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases.testParticipants" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quiz" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="METHOD_NAME" value="testParticipants" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCases.testSameEvent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="quiz" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="METHOD_NAME" value="testSameEvent" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestCases" />
+        <item itemvalue="JUnit.TestCases.testParticipants" />
+        <item itemvalue="JUnit.TestCases.testSameEvent" />
+        <item itemvalue="JUnit.TestCases.testEventPrintOut" />
+        <item itemvalue="JUnit.TestCases.testInvalidTicket" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../Example" value="PREVIEW" />
+        <entry key="$USER_HOME$/Dropbox/Documents/Projects/Scala/Example" value="PREVIEW" />
+        <entry key="$USER_HOME$/Dropbox/Documents/Projects/Scala/recfun" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b435420-c662-432d-9308-eb90bd7ac2cd" name="Default Changelist" comment="" />
+      <created>1553507421844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553507421844</updated>
+      <workItem from="1591576230962" duration="56000" />
+      <workItem from="1591620244544" duration="16299000" />
+      <workItem from="1591702770312" duration="485000" />
+      <workItem from="1591703795851" duration="236000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591633026721">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591633026721" />
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591626475675">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591626475675" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1591631377019">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591631377019" />
+    <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591620644090">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591620644090" />
+    <state x="-1421" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591702941949">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="-1421" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1536.824/0.0.1536.824@-1920.0.1536.824" timestamp="1591702941949" />
+    <state x="-1371" y="167" key="FileChooserDialogImpl" timestamp="1591704030523">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state x="-1371" y="167" key="FileChooserDialogImpl/-1920.0.1536.824/0.0.1536.824@-1920.0.1536.824" timestamp="1591704030523" />
+    <state width="1537" height="768" key="GridCell.Tab.0.bottom" timestamp="1591703257223">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="768" key="GridCell.Tab.0.bottom/-1920.0.1536.824/0.0.1536.824@-1920.0.1536.824" timestamp="1591703257223" />
+    <state width="1537" height="768" key="GridCell.Tab.0.bottom/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591633968915" />
+    <state width="1537" height="768" key="GridCell.Tab.0.center" timestamp="1591703257223">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="768" key="GridCell.Tab.0.center/-1920.0.1536.824/0.0.1536.824@-1920.0.1536.824" timestamp="1591703257223" />
+    <state width="1537" height="768" key="GridCell.Tab.0.center/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591633968915" />
+    <state width="1537" height="768" key="GridCell.Tab.0.left" timestamp="1591703257223">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="768" key="GridCell.Tab.0.left/-1920.0.1536.824/0.0.1536.824@-1920.0.1536.824" timestamp="1591703257223" />
+    <state width="1537" height="768" key="GridCell.Tab.0.left/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591633968915" />
+    <state width="1537" height="768" key="GridCell.Tab.0.right" timestamp="1591703257223">
+      <screen x="-1920" y="0" width="1536" height="824" />
+    </state>
+    <state width="1537" height="768" key="GridCell.Tab.0.right/-1920.0.1536.824/0.0.1536.824@-1920.0.1536.824" timestamp="1591703257223" />
+    <state width="1537" height="768" key="GridCell.Tab.0.right/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591633968915" />
+    <state width="1493" height="253" key="GridCell.Tab.1.bottom" timestamp="1591622273449">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.bottom/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591622273449" />
+    <state width="1493" height="253" key="GridCell.Tab.1.center" timestamp="1591622273449">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.center/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591622273449" />
+    <state width="1493" height="253" key="GridCell.Tab.1.left" timestamp="1591622273449">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.left/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591622273449" />
+    <state width="1493" height="253" key="GridCell.Tab.1.right" timestamp="1591622273449">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.right/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591622273449" />
+    <state x="263" y="0" key="SettingsEditor" timestamp="1591637047844">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="263" y="0" key="SettingsEditor/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591637047844" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1591625790887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/-1920.0.1536.824/0.0.1536.824@0.0.1536.824" timestamp="1591625790887" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>scala-sdk-2.12.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>quiz</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
